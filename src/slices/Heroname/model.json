@@ -1,0 +1,40 @@
+{
+  "id": "heroname",
+  "type": "SharedSlice",
+  "name": "Heroname",
+  "description": "Heroname",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "first_name": {
+          "type": "Text",
+          "config": {
+            "label": "First Name",
+            "placeholder": ""
+          }
+        },
+        "last_name": {
+          "type": "Text",
+          "config": {
+            "label": "Last Name",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
