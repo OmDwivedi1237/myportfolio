@@ -32,6 +32,50 @@
             "label": "Tagline",
             "placeholder": ""
           }
+        },
+        "tagline_parts": {
+          "type": "Group",
+          "config": {
+            "label": "tagline_parts",
+            "repeat": true,
+            "fields": {
+              "cybertag": {
+                "type": "Text",
+                "config": {
+                  "label": "cybertag",
+                  "placeholder": ""
+                }
+              },
+              "sweheadstarttag": {
+                "type": "Text",
+                "config": {
+                  "label": "sweheadstarttag",
+                  "placeholder": ""
+                }
+              },
+              "cooktag": {
+                "type": "Text",
+                "config": {
+                  "label": "cooktag",
+                  "placeholder": ""
+                }
+              },
+              "hackertag": {
+                "type": "Text",
+                "config": {
+                  "label": "hackertag",
+                  "placeholder": ""
+                }
+              },
+              "loveicecreamtag": {
+                "type": "Text",
+                "config": {
+                  "label": "loveicecreamtag",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
         }
       },
       "items": {}

@@ -17,6 +17,56 @@
 				"__TYPE__": "FieldContent",
 				"value": "what",
 				"type": "Text"
+			},
+			"tagline_parts": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"cybertag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "back",
+									"type": "Text"
+								}
+							],
+							[
+								"sweheadstarttag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "fair",
+									"type": "Text"
+								}
+							],
+							[
+								"cooktag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "globe",
+									"type": "Text"
+								}
+							],
+							[
+								"hackertag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "realize",
+									"type": "Text"
+								}
+							],
+							[
+								"loveicecreamtag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "perhaps",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

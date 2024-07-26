@@ -72,6 +72,61 @@ export type HomepageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument;
 
 /**
+ * Item in *Heroname → Default → Primary → tagline_parts*
+ */
+export interface HeronameSliceDefaultPrimaryTaglinePartsItem {
+  /**
+   * cybertag field in *Heroname → Default → Primary → tagline_parts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[].cybertag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cybertag: prismic.KeyTextField;
+
+  /**
+   * sweheadstarttag field in *Heroname → Default → Primary → tagline_parts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[].sweheadstarttag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sweheadstarttag: prismic.KeyTextField;
+
+  /**
+   * cooktag field in *Heroname → Default → Primary → tagline_parts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[].cooktag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cooktag: prismic.KeyTextField;
+
+  /**
+   * hackertag field in *Heroname → Default → Primary → tagline_parts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[].hackertag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hackertag: prismic.KeyTextField;
+
+  /**
+   * loveicecreamtag field in *Heroname → Default → Primary → tagline_parts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[].loveicecreamtag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  loveicecreamtag: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Heroname → Default → Primary*
  */
 export interface HeronameSliceDefaultPrimary {
@@ -104,6 +159,18 @@ export interface HeronameSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tagline: prismic.KeyTextField;
+
+  /**
+   * tagline_parts field in *Heroname → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heroname.default.primary.tagline_parts[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tagline_parts: prismic.GroupField<
+    Simplify<HeronameSliceDefaultPrimaryTaglinePartsItem>
+  >;
 }
 
 /**
@@ -151,6 +218,7 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
       HeronameSlice,
+      HeronameSliceDefaultPrimaryTaglinePartsItem,
       HeronameSliceDefaultPrimary,
       HeronameSliceVariation,
       HeronameSliceDefault,
