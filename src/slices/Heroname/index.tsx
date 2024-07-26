@@ -4,8 +4,10 @@ import { useEffect, useRef } from "react";
 
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import gsap, { random } from "gsap";
+import {gsap, random } from "gsap";
 import Boundry from "@/components/boundry";
+import ReactDOM from 'react-dom';
+import  Shapes  from  "./shapes";
 
 /**
  * Props for `Heroname`.
