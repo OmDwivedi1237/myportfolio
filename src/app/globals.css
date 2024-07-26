@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    cursor: none;
+}
+
+.cursor {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: lightgreen;
+    border: 1px solid lightgreen;
+    z-index: 1001;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+.cursor.hover {
+    transform: scale(1.5);
+    background-color: darkgreen;
+    border-color: darkgreen;
+}

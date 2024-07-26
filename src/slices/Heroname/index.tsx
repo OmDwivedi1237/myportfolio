@@ -8,6 +8,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import Boundry from "@/components/boundry";
 import ReactDOM from 'react-dom';
 import Shapes from "./Shapes";
+import CustomCursor from "@/components/customCursor";
 
 // Register the TextPlugin with GSAP
 gsap.registerPlugin(TextPlugin);
@@ -69,6 +70,7 @@ const Heroname = ({ slice }: HeronameProps): JSX.Element => {
       data-slice-variation={slice.variation}
       ref={component}
     >
+    <CustomCursor/>
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:cols-2">
         <Shapes />
         <div className="col-start-1 md:row-start-1">
