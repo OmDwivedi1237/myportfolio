@@ -5,7 +5,7 @@ import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import Boundry from "@/components/boundry";
+import Boundry from "@/components/Boundry";
 import ReactDOM from 'react-dom';
 import Shapes from "./Shapes";
 import CustomCursor from "@/components/customCursor";
