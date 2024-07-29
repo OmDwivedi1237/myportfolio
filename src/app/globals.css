@@ -17,6 +17,7 @@ html {
     pointer-events: none;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
 }
 
 .cursor-canvas {
@@ -33,3 +34,6 @@ html {
     background-color: darkgreen;
     border-color: darkgreen;
 }
+.highlight {
+    color: rgb(34, 196, 94);
+  }
