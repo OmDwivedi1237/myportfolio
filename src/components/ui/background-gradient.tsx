@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 export const BackgroundGradient = ({
   children,
@@ -13,6 +13,44 @@ export const BackgroundGradient = ({
   containerClassName?: string;
   animate?: boolean;
 }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = ref.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      x.set((offsetX - centerX) / centerX * 15);
+      y.set((offsetY - centerY) / centerY * -15);
+    };
+
+    const handleMouseLeave = () => {
+      x.set(0);
+      y.set(0);
+    };
+
+    const element = ref.current;
+    element?.addEventListener("mousemove", handleMouseMove);
+    element?.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      element?.removeEventListener("mousemove", handleMouseMove);
+      element?.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [x, y]);
+
+  const rotateX = useTransform(y, (value) => `${value}deg`);
+  const rotateY = useTransform(x, (value) => `${value}deg`);
+
   const variants = {
     initial: {
       backgroundPosition: "0% 50%",
@@ -20,10 +58,13 @@ export const BackgroundGradient = ({
     animate: {
       backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
     },
+    hover: {
+      scale: 1.05,
+    },
   };
 
   return (
-    <div className={cn("relative", containerClassName)}>
+    <div className={cn("relative group", containerClassName)}>
       <motion.div
         variants={animate ? variants : undefined}
         initial={animate ? "initial" : undefined}
@@ -46,14 +87,16 @@ export const BackgroundGradient = ({
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
       />
-      <div
-        className={cn(
-          "relative z-10 rounded-3xl overflow-hidden",
-          className
-        )}
+      <motion.div
+        ref={ref}
+        variants={variants}
+        whileHover="hover"
+        style={{ rotateX, rotateY }}
+        className={cn("relative z-10 rounded-3xl overflow-hidden", className)}
       >
         {children}
-      </div>
+        <div className="absolute inset-0 z-20 pointer-events-none rounded-3xl bg-gradient-to-r from-transparent to-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+      </motion.div>
     </div>
   );
 };

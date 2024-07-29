@@ -32,7 +32,7 @@ const Bio = ({ slice }: BioProps): JSX.Element => {
         <BackgroundGradient className="max-w-sm">
           <PrismicNextImage
             field={slice.primary.avatar}
-            className="object-cover w-full h-full rounded-3xl"
+            className="row-start-1 max-w-sm md:col-start-2 object-cover w-full h-full rounded-3xl"
           />
         </BackgroundGradient>
 
