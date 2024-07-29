@@ -1,0 +1,104 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "nav_item": {
+        "type": "Group",
+        "config": {
+          "label": "Nav_Item",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "contact": {
+        "type": "Text",
+        "config": {
+          "label": "Contact",
+          "placeholder": ""
+        }
+      },
+      "contact_label": {
+        "type": "Text",
+        "config": {
+          "label": "Contact_Label",
+          "placeholder": ""
+        }
+      },
+      "twitter_link": {
+        "type": "Link",
+        "config": {
+          "label": "Twitter_Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "github_link": {
+        "type": "Link",
+        "config": {
+          "label": "Github_Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedin_link": {
+        "type": "Link",
+        "config": {
+          "label": "Linkedin_Link",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    },
+    "SEO and Metadata": {
+      "meta_tile": {
+        "type": "Text",
+        "config": {
+          "label": "Meta_Tile",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta_Description",
+          "placeholder": ""
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG_Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
