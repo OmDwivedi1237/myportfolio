@@ -69,7 +69,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = BioSlice;
+type PageDocumentDataSlicesSlice = TechBlockSlice | BioSlice;
 
 /**
  * Content for Page documents
@@ -503,6 +503,36 @@ export type HeronameSlice = prismic.SharedSlice<
   HeronameSliceVariation
 >;
 
+/**
+ * Default variation for TechBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *TechBlock*
+ */
+type TechBlockSliceVariation = TechBlockSliceDefault;
+
+/**
+ * TechBlock Shared Slice
+ *
+ * - **API ID**: `tech_block`
+ * - **Description**: TechBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechBlockSlice = prismic.SharedSlice<
+  "tech_block",
+  TechBlockSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -532,6 +562,9 @@ declare module "@prismicio/client" {
       HeronameSliceDefaultPrimary,
       HeronameSliceVariation,
       HeronameSliceDefault,
+      TechBlockSlice,
+      TechBlockSliceVariation,
+      TechBlockSliceDefault,
     };
   }
 }

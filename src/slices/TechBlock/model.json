@@ -1,0 +1,16 @@
+{
+  "id": "tech_block",
+  "type": "SharedSlice",
+  "name": "TechBlock",
+  "description": "TechBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
