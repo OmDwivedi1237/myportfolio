@@ -69,7 +69,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = TechBlockSlice | BioSlice;
+type PageDocumentDataSlicesSlice = BpContentSlice | TechBlockSlice | BioSlice;
 
 /**
  * Content for Page documents
@@ -372,6 +372,81 @@ type BioSliceVariation = BioSliceDefault;
 export type BioSlice = prismic.SharedSlice<"bio", BioSliceVariation>;
 
 /**
+ * Primary content in *BpContent → Default → Primary*
+ */
+export interface BpContentSliceDefaultPrimary {
+  /**
+   * Heading field in *BpContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bp_content.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content_Type field in *BpContent → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bp_content.default.primary.content_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  content_type: prismic.SelectField<"Blog" | "Projects">;
+
+  /**
+   * Desc field in *BpContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bp_content.default.primary.desc
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  desc: prismic.RichTextField;
+
+  /**
+   * View_More_txt field in *BpContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bp_content.default.primary.view_more_txt
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  view_more_txt: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BpContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BpContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BpContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BpContent*
+ */
+type BpContentSliceVariation = BpContentSliceDefault;
+
+/**
+ * BpContent Shared Slice
+ *
+ * - **API ID**: `bp_content`
+ * - **Description**: BpContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BpContentSlice = prismic.SharedSlice<
+  "bp_content",
+  BpContentSliceVariation
+>;
+
+/**
  * Item in *Heroname → Default → Primary → tagline_parts*
  */
 export interface HeronameSliceDefaultPrimaryTaglinePartsItem {
@@ -609,6 +684,10 @@ declare module "@prismicio/client" {
       BioSliceDefaultPrimary,
       BioSliceVariation,
       BioSliceDefault,
+      BpContentSlice,
+      BpContentSliceDefaultPrimary,
+      BpContentSliceVariation,
+      BpContentSliceDefault,
       HeronameSlice,
       HeronameSliceDefaultPrimaryTaglinePartsItem,
       HeronameSliceDefaultPrimary,

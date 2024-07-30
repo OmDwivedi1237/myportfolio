@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "bp_content": {
+              "type": "SharedSlice"
+            },
             "tech_block": {
               "type": "SharedSlice"
             },

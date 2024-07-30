@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "earth",
+				"type": "Text"
+			},
+			"content_type": {
+				"__TYPE__": "FieldContent",
+				"value": "Blog",
+				"type": "Select"
+			},
+			"desc": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Est fugiat non ea incididunt nostrud commodo laboris eiusmod fugiat enim ex."
+						}
+					}
+				]
+			},
+			"view_more_txt": {
+				"__TYPE__": "FieldContent",
+				"value": "subject",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
