@@ -504,6 +504,58 @@ export type HeronameSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TechBlock → Default → Primary → Tech_Rep*
+ */
+export interface TechBlockSliceDefaultPrimaryTechRepItem {
+  /**
+   * Tech_Name field in *TechBlock → Default → Primary → Tech_Rep*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_block.default.primary.tech_rep[].tech_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tech_name: prismic.KeyTextField;
+
+  /**
+   * Tech_Color field in *TechBlock → Default → Primary → Tech_Rep*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_block.default.primary.tech_rep[].tech_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  tech_color: prismic.ColorField;
+}
+
+/**
+ * Primary content in *TechBlock → Default → Primary*
+ */
+export interface TechBlockSliceDefaultPrimary {
+  /**
+   * Heading field in *TechBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_block.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tech_Rep field in *TechBlock → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_block.default.primary.tech_rep[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tech_rep: prismic.GroupField<
+    Simplify<TechBlockSliceDefaultPrimaryTechRepItem>
+  >;
+}
+
+/**
  * Default variation for TechBlock Slice
  *
  * - **API ID**: `default`
@@ -512,7 +564,7 @@ export type HeronameSlice = prismic.SharedSlice<
  */
 export type TechBlockSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<TechBlockSliceDefaultPrimary>,
   never
 >;
 
@@ -563,6 +615,8 @@ declare module "@prismicio/client" {
       HeronameSliceVariation,
       HeronameSliceDefault,
       TechBlockSlice,
+      TechBlockSliceDefaultPrimaryTechRepItem,
+      TechBlockSliceDefaultPrimary,
       TechBlockSliceVariation,
       TechBlockSliceDefault,
     };

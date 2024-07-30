@@ -10,7 +10,40 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tech_rep": {
+          "type": "Group",
+          "config": {
+            "label": "Tech_Rep",
+            "repeat": true,
+            "fields": {
+              "tech_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Tech_Name",
+                  "placeholder": ""
+                }
+              },
+              "tech_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Tech_Color",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
